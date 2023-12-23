@@ -1,13 +1,10 @@
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
 
-export default function Listado({ baseColaboradores }) {
-
-    const [lista, setLista] = useState(baseColaboradores)
+export default function Listado({ lista }) {
 
     return (
         <>
-            <Table className='table table-striped'>
+            <Table className='table-sm table-striped'>
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -20,7 +17,7 @@ export default function Listado({ baseColaboradores }) {
                 <tbody>
                     {lista.map(user => {
                         return (
-                            <tr key={user.id}>
+                            <tr key={user.telefono}>
                                 <td>{user.nombre}</td>
                                 <td>{user.correo}</td>
                                 <td>{user.edad}</td>
