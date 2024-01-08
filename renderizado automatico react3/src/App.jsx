@@ -9,13 +9,16 @@ import { useState } from 'react'
 
 
 function App() {
+
+  
   const [lista, setLista] = useState(baseColaboradores)
+  const [mantenerLista, setMantenerLista] = useState(lista)
   const [error, setError] = useState("")
   const [succes, setSucces] = useState("")
   return (
     <>
-      <Buscador />
-      <Formulario setLista={setLista} baseColaboradores={baseColaboradores} setError={setError} setSucces={setSucces}/>
+      <Buscador setLista={setLista} lista={lista} mantenerLista={mantenerLista} />
+      <Formulario setMantenerLista={setMantenerLista} setLista={setLista} baseColaboradores={baseColaboradores} setError={setError} setSucces={setSucces}/>
       <AlertComponent error={error} succes={succes}/>
       <Listado lista={lista} />
     </>
